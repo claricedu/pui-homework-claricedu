@@ -1,5 +1,5 @@
 # PUI homework
 
-Deployed website: `add the URL to your deployed website`
+Deployed website: https://claricedu.github.io/pui-homework-claricedu/
 
 Repository link: `add the URL to this repository`
