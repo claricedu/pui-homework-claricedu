@@ -2,4 +2,4 @@
 
 Deployed website: https://claricedu.github.io/pui-homework-claricedu/
 
-Repository link: https://github.com/claricedu/pui-homework-claricedu/tree/main
+Repository link: https://github.com/claricedu/pui-homework-claricedu/
