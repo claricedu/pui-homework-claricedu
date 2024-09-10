@@ -33,6 +33,14 @@ select {
     background-color: white;
 }
 
+a {
+    text-decoration: none;
+  }
+
+.selected-page {
+    background-color: yellow;
+}
+
 .gallery-img {
     width: 400px;
     height: 400px;
