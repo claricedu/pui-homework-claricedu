@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    margin: 0;
+    margin-bottom: 200px;
 }
 
 p {
@@ -46,7 +46,7 @@ nav {
 .nav-items {
     display: flex;
     border-bottom: 2px solid black;
-    padding-left: 580px;
+    padding-left: 350px;
     padding-right: 70px;
     padding-bottom: 10px;
 }
@@ -121,9 +121,11 @@ nav {
 }
 
  /* CART PAGE */
-.cart-main {
-    margin: 20px 300px;
+
+ .cart-main {
+    margin: 20px 200px;
 }
+
 
 .cart-container {
     display: flex; 
@@ -153,7 +155,6 @@ nav {
     height: 4px;
     background-color: black;
 }
-
 
 .cart-checkout-container {
     display: flex; 
