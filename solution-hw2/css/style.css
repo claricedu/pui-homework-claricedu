@@ -126,6 +126,10 @@ nav {
     text-align: left;
 }
 
+.detail-price {
+    font-style: bold;
+}
+
  /* CART PAGE */
 
  .cart-main {
