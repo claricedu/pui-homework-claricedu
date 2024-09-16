@@ -4,24 +4,56 @@ body {
     margin: 0;
 }
 
+p {
+    font-size: 22px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
 a {
     text-decoration: none;
   }
 
+button {
+    border: 2px solid black;
+    background-color: white;
+    padding: 10px 10px;
+    margin: 10px;
+}
 
-header {
+button:hover {
+    background-color: yellow;
+}
+
+select { 
+    border: 1px solid black;
+    padding: 5px;
+    background-color: white;
+    text-align: left;
+    width: 300px;
+    height: 40px;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    align-items: center;
+    padding: 20px;
 }
 
 .nav-items {
     display: flex;
+    border-bottom: 2px solid black;
+    padding-left: 580px;
+    padding-right: 70px;
+    padding-bottom: 10px;
 }
 
 .nav-item {
     color: black;
-    padding: 5px 10px;
+    padding: 0px 20px;
 }
 
 .selected-nav-item {
@@ -30,11 +62,12 @@ header {
     font-weight: bold;
 }
 
-/* hr {
-    border: 1px solid #000;
-    margin-top: 10px;
-} */
+.logo {
+    width: 400px;
+    border: none;
+}
 
+/* GALLERY PAGEG CSS */
 .gallery-container {
     display: flex;
     flex-wrap: wrap; 
@@ -43,62 +76,51 @@ header {
     margin: 100px;
 }
 
-.gallery-img {
+.gallery-container img {
     width: 285px;
     height: 285px;
-    border: 1px solid #000; 
+    border: 2px solid black; 
 }
 
-.logo {
-    display: block;
-    width: 400px;
-    border: none;
+.gallery-product {
+    text-align: left;
 }
 
-.product-detail {
-    display: flex;
-    gap: 20px;
-}
-
-
-.product:hover {
+.gallery-product:hover {
     background-color: yellow;
     font-weight: bold;
     text-decoration: none;
 }
 
-button {
-    border: 2px solid #000;
-    background-color: white;
-    padding: 5px 10px;
-}
-
-button:hover {
-    background-color: yellow;
-}
-
-select { 
-    border: 1px solid #000;
-    padding: 5px;
-    background-color: white;
-}
-
+/* PRODUCT DETAIL PAGE CSS */
 .detail-container {
     display: flex; 
     gap: 100px;
     margin: 100px;
+    justify-content: space-between;
 }
 
-.detail-img {
+.detail-container img {
     width: 600px;
     height: 600px;
-    border: 1px solid #000; 
+    border: 1px solid black; 
 }
 
+.detail-des-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+}
 .detail-text {
     text-align: left;
 }
 
+.detail-selection {
+    text-align: left;
+}
+
+ /* CART PAGE */
 .cart-main {
     margin: 20px 300px;
 }
@@ -109,11 +131,10 @@ select {
     align-items: center;
 }
 
-
 .cart-img {
     width: 200px;
     height: 200px;
-    border: 1px solid #000; 
+    border: 1px solid black; 
 }
 
 .cart-product-des-container {
