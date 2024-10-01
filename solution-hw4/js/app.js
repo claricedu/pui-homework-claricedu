@@ -10,8 +10,9 @@ console.log(params);
 
 const chosenRoll = params.get("roll");
 
-console.log(choosenRoll);
+console.log("chosen roll: " + chosenRoll);
 
+console.log(rolls);
 // code from lab4
 const rollInfo = rolls[chosenRoll];  
 
@@ -25,9 +26,9 @@ detailImg.src = `https://claricedu.github.io/pui-homework-claricedu/assets/produ
 
 // update price
 const priceElement = document.querySelector('#detail-price');
-priceElement.textContent = `$${chosenRoll.basePrice.toFixed(2)}`;
+priceElement.textContent = `$${rollInfo.basePrice.toFixed(2)}`;
 
-//========================
+//======================== ADD TO CART
 
 class Roll {
     constructor(rollType, rollGlazing, packSize, basePrice) {
@@ -39,19 +40,18 @@ class Roll {
 }
 
 const addToCartButton = document.querySelector('#detail-add-cart-button');
+
 addToCartButton.addEventListener('click', () => {
+
     const selectedGlazing = glazingSelect.value;
     const selectedPackSize = parseInt(packSelect.value);
 
-    // Create a new Roll instance and add it to the cart
-    const newRoll = new Roll(selectedRoll, selectedGlazing, selectedPackSize, rollInfo.basePrice);
+    const newRoll = new Roll(chosenRoll, selectedGlazing, selectedPackSize, rollInfo.basePrice);
     cart.push(newRoll);
-
-    // Log the cart to the console for now
     console.log(cart);
 });
 
-// =========================
+// ========================= POPULATING DROPDOWNS
 
 let basePrice = 2.49;
 
@@ -87,11 +87,20 @@ function populateDropdowns() {
         packSelect.appendChild(option);
     });
 }
+
+function glazingChange() {
+    updatePrice();
+}
+
+function sizeChange() {
+    updatePrice();
+}
+
   
 function updatePrice() {
     const glazingSelect = document.getElementById('glazingSelect');
     const packSizeSelect = document.getElementById('packSelect');
-    const priceElement = document.querySelector('.price');
+    const priceElement = document.querySelector('#detail-price');
   
     const selectedGlazingPrice = parseFloat(glazingSelect.value);
     const selectedPackSizeMultiplier = parseInt(packSizeSelect.value);
@@ -105,9 +114,6 @@ function updatePrice() {
   document.getElementById('packSelect').addEventListener('change', updatePrice);
 
   document.addEventListener('DOMContentLoaded', () => {
-    const rollType = getRollTypeFromUrl();
-    const basePrice = loadRollData(rollType);
-
     populateDropdowns();
     updatePrice();
   
