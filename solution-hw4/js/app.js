@@ -112,26 +112,3 @@ function updatePrice() {
     updatePrice();
   
   })
-
-  // Get the roll type from the URL
-function getRollTypeFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get('roll');
-  }
-  
-  // Load the roll data from rollsData.js
-  function loadRollData(rollType) {
-    const rollData = rolls[rollType];
-    if (rollData) {
-      // Update product title and image
-      document.querySelector('.product-title').textContent = `${rollType} Cinnamon Roll`;
-      document.querySelector('.original-cinnamon-roll-image').src = `../assets/products/${rollData.imageFile}`;
-      
-      // Set base price dynamically
-      document.querySelector('.price').textContent = `$${rollData.basePrice.toFixed(2)}`;
-      
-      // Return the base price for further calculations
-      return rollData.basePrice;
-    }
-    return 2.49; // Default base price
-  }
