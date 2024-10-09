@@ -134,12 +134,6 @@ const cartRolls = [
 // add the specified cart list to cart array;
 for (let roll of cartRolls) {
     cart.push(roll);
-    // const cartItem = {
-    // itemName: roll.type,
-    // totalPrice: totalPrice(roll.glazing,roll.size,roll.basePrice)
-    // }
-    // console.log(cartItem)
-    // cart.push(cartItem);
 }
 
 // function logic taken from hmwk4's price calculation, but can't reuse 
