@@ -206,7 +206,7 @@ function createImageAndRemoveContainer(roll, index, cartItemContainer) {
 
     // Add event listener for remove action
     removeText.addEventListener("click", () => {
-        removeItemFromCart(index, cartItemContainer); // Remove the entire cart item container
+        removeItemFromCart(roll, cartItemContainer); // Pass the roll object itself
     });
 
     elemContainer.appendChild(imgElement);
@@ -216,22 +216,20 @@ function createImageAndRemoveContainer(roll, index, cartItemContainer) {
 }
 
 // Function to remove item from cart and DOM
-function removeItemFromCart(index, cartItemContainer) {
-    // 1. Remove the item from the cart array
-    cart.splice(index, 1);  // Removes the item at the specified index from the array
+function removeItemFromCart(roll, cartItemContainer) {
+    const index = cart.indexOf(roll);
 
-    // 2. Remove the corresponding DOM element (the entire cart item container)
-    cartItemContainer.remove(); // Removes the DOM element representing the item
+    if (index !== -1) {
+        cart.splice(index, 1); 
+    }
 
-    // Log the updated cart to see the changes
+    cartItemContainer.remove(); 
     console.log("Updated cart: ", cart);
 
-    // 3. Recalculate and update the total price
     const cartTotal = cartTotalPrice(cart);
     const cartTotalPriceElement = document.getElementById('cart-total-price');
     cartTotalPriceElement.innerText = `$${cartTotal}`;
 
-    // 4. Handle empty cart case
     if (cart.length === 0) {
         cartTotalPriceElement.innerText = "$0.00";
     }
