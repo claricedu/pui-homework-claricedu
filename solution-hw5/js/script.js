@@ -1,6 +1,3 @@
-const cart = [];
-
-
 const queryString = window.location.search;
 
 console.log(queryString);
@@ -14,6 +11,9 @@ const chosenRoll = params.get("roll");
 console.log("chosen roll: " + chosenRoll);
 
 console.log(rolls);
+
+const cart = [];
+
 // code from lab4
 const rollInfo = rolls[chosenRoll];  
 
@@ -43,7 +43,6 @@ for (let roll of cartRolls) {
 // function logic taken from hmwk4's price calculation, but can't reuse 
 // function as original takes the info directly from html element
 function itemTotalPrice (glazing, size, basePrice) {
-    //calculating glazing price adaptation
     const glazingPriceMap = {
         'Sugar Milk': 0.00,
         'Vanilla Milk': 0.50,
@@ -62,6 +61,7 @@ function itemTotalPrice (glazing, size, basePrice) {
 }
 
 const cartContainer = document.querySelector(".cart-items-container");
+
 for (let i = 0; i < cartRolls.length; i++) {
     const roll = cartRolls[i];
     // Main cart-item-container
@@ -83,8 +83,6 @@ for (let i = 0; i < cartRolls.length; i++) {
     cartItemContainer.appendChild(priceContainer);
 
     cartContainer.appendChild(cartItemContainer);
-
-    console.log("Cart right now: " + cart[0]);
 }
 
 // create container for image and remove text;
@@ -102,7 +100,7 @@ function createImageAndRemoveContainer(roll, index, cartItemContainer) {
 
     // Add event listener for remove action
     removeText.addEventListener("click", () => {
-        removeItemFromCart(roll, cartItemContainer); // Pass the roll object itself
+        removeItemFromCart(roll, cartItemContainer);
     });
 
     elemContainer.appendChild(imgElement);
