@@ -112,7 +112,6 @@ function createImageAndRemoveContainer(roll, index, cartItemContainer) {
 // Function to remove item from cart and DOM
 function removeItemFromCart(roll, cartItemContainer) {
     const index = cart.indexOf(roll);
-
     if (index !== -1) {
         cart.splice(index, 1); 
     }
@@ -128,7 +127,6 @@ function removeItemFromCart(roll, cartItemContainer) {
         cartTotalPriceElement.innerText = "$0.00";
     }
 }
-
 
 // Create label container and its labels
 function createLabelContainer(roll) {
