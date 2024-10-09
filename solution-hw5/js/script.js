@@ -85,8 +85,6 @@ for (let i = 0; i < cartRolls.length; i++) {
     cartContainer.appendChild(cartItemContainer);
 
     console.log("Cart right now: " + cart[0]);
-
-    // update total price
 }
 
 // create container for image and remove text;
