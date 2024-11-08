@@ -125,31 +125,52 @@ Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-gener
 
 ## Project Description
 
-Briefly restate your motivation and a short description of your project.
+My chosen idea will be a collaboration between me and a friend, Emma Li, where I create an interactive playthrough/visualization of part 1 of her poem "How Small the Beattles Run". The design will feature different visual representations of the poem, the poem itself, that are interactive for the user through screen actions such as clicking, hovering, dragging, and scrolling.
 
 ## High-Fi Prototypes
 
 ### *Prototype 1*
 
-![title for prototype1](images/prototype1.png)
+![first screenshot of prototype 1](images/FP2-prototype1-1.png)
+![second screenshot of prototype 1 with a one more stanza](images/FP2-prototype1-2.png)
 
-A brief description and summary of the user feedback (\<100 words, 2 images) 
+This prototype is a full screen format of the visualization. The phrases stay until two stanzas fill the page, and then disappear and a cleared pageg appears for the new section of the poem. This prototype received the best feedback from the users, who thought it made the narrative more interesting and exciting, as they weren't sure what will pop up next. One criticism was that users are unsure of what to do in the beginning, while most users quickly realized the interactivity, users reproted the constant switching of interactions was distracting and suggested keeping them more limited. 
 
 ### *Prototype 2*
 
-…
+![first screenshot of prototype 1](images/FP2-prototype2-1.png)
+![second screenshot of prototype 2 with 2nd stanza](images/FP2-prototype2-2.png)
+
+This prototype is similar to the first, except that there are four sections, each for a stanza of the poem. This way, users begin a new box for each stanza and will have a finished visualization for each stanza to look at by the end of the experience. While I thought users would like the finished product, both users surprisngly found the tighter space feeling more constrained, and that made the popped up graphics and interactions less surprising and delightful. One user that the structure made it feel more constrained and less interesting to her.
 
 ## Usability Test
 
 Discuss the user feedback you got during the evaluation / usability test (\~300 words). Indicate which feedback you implemented, inspired new directions, or otherwise influenced your final design. 
 
+During usability testing, users provided insightful feedback on both prototypes. Prototype 1 featured a full-screen format where phrases stayed until two stanzas filled the page, then disappeared as a cleared page appeared for the next poem section. Users liked this format, noting that it made the narrative more engaging since they weren’t sure what would appear next. However, a common criticism was the uncertainty in how to start; while most users discovered the interactivity quickly, some felt the changing interactions were distracting and recommended limiting them for consistency.
+
+Prototype 2 differed by dividing the experience into four sections, one for each stanza, which provided a separate visualization space for each. I initially thought users would appreciate the completed look of each stanza, but feedback revealed the opposite. Both users felt the confined space limited the impact of the visuals and made the interactions feel predictable, ultimately reducing the spontaneity and excitement they experienced in Prototype 1. One user even commented that the structured layout felt constrained and less engaging.
+
+In response to this feedback, I implemented several changes. I retained the full-screen design from Prototype 1, as users found it enhanced the narrative flow and surprise elements. To address the start-point ambiguity, I changed the initial interaction to allow users to click anywhere on the screen instead of on the title, signaling interactivity without explicit prompts. I chose not to add a “click here” label, as it disrupted the artistic flow and exploration element, which is essential for this art-focused project. Instead, the starting interaction is more subtle, balancing user guidance with room for exploration. 
+
 ## Updated Designs
 
 Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
 
+
+![screenshot showing clicking on title brings new stanza](images/FP2-change1.png)
+![screenshot showing clicking anywhere brings new stanza](images/FP2-change2.png)
+
+The key implementation of user feedback is that the first interaction now starts with clicking anywhere on the screen rather than clicking on the title, which indicates to users the interactive nature of the experience. While I contemplated adding a label e.g. "click here", it ultimately was too disruptive to the overall narration, and given the webpage is purposed as an art project I beleive its ok that there are more rooms for ambuiguity and exploration, rather than entirely prioritizing user efficiency and ease, as long as its not distressful to the user. Interaction happening from clicking anywhere on the screen was the compromise I settled on that ensures the user understands how to proceed forward fairly quickly without being too "on the nose" and instructive.
+
+
 ## Feedback Summary
 
 Summarize the feedback you received in the lab session and discuss how it influenced your design (\~300 words). 
+
+Note that the interactions will be more elaborate and involve more details in my actual project, but prototyping every detail felt unproductive. I focused on prototyping enough so users could grasp the bigger picture and get a sense of how microinteractions with the poem phases will work.
+
+While I was unable to gather feedback in lab, I sought out one more classmate’s input to gain further insights. She largely agreed with prior feedback on the second prototype, noting that while it was nice to see the full picture of each stanza, it felt more restrictive and detracted from the whimsical mood I aim to create. She was also the one who argued against adding conspicuous labels, suggesting instead that a bit of search time was worth it if the exploration experience was fun and engaging. This feedback prompted me to think about how I could enhance the experience from the very start and led me to incorporate sound and visual imagery. I believe adding sound will further enhance the whimsical and immersive nature of the piece, helping users feel more engaged. I also decided to make interactions more fluid, using more delays and soft appearances and will look into libraries further to explore animation possibilities, to maintain a sense of mystery and excitement, encouraging users to feel a sense of discovery. Overall, user feedback highlighted the importance of balancing intuitiveness with creative exploration, inspiring me to simplify interactions and preserve the spontaneous quality that users enjoyed. This will allow for a richer, more dynamic experience.
 
 ## Milestones
 
@@ -159,44 +180,46 @@ Outline weekly milestones to plan your expected implementation progress until th
 
 - [ ] Week 9 Oct 28 \- Nov 1:
   - [X] FP1 due
-  - [ ] ...
   
 - [ ] Week 10 Nov 4 \- Nov 8:   
-  - [ ] FP2 due
+  - [X] FP2 due
 
-- [ ] Week 11 Nov 11 \- Nov 15:  
-- [ ] Week 12 Nov 18 \- Nov 22:   
+- [ ] Week 11 Nov 11 \- Nov 15: 
+  - [ ] Research how to use library
+  - [ ] Stanza 1 and 2 content gathered
+  - [ ] Stanza 1 animations implemented
+- [ ] Week 12 Nov 18 \- Nov 22:  
+  - [ ] Stanza 3 and 4 content gathered
+  - [ ] Stanza 2 animations implemented
 - [ ] Week 13 Nov 25 \- Nov 29:  
-
   - [ ] Thanksgiving  
+  - [ ] Stanza 3 animations implemented
 - [ ] Week 14 Dec 2 \- Dec 6:  
+  - [ ] Stanza 4 animations implemented
+  - [ ] User testing final design
   - [ ] FP4 due 
 
 ### *Libraries and Other Components*
 
 List the JS libraries and other components (if applicable) that you plan to use. 
-* 
+* D3 Library for interactive animations
 
 
 ## Generative AI Use Plan
 
-Outline how you plan to use Generative AI tools to aid in the implementation (\~300 words).
+I mostly use ChatGPT and will outline below the ways I plan to use and not use it on this project. 
 
 ### *Tool Use*
 
- What would you use? Edit the list given your plan. For each tool, explain briefly on what do you expect Generative AI to help you with and what might it not be able to help you with.
-
 * ChatGPT  
-  * I will use it for … because it can help me …  
-  * I will not use it for … because it might not be able to help me with …   
-* GitHub Copilot  
-* ...
+  * I will use it to debug issues with interactions because it can potentially spot easy-to-miss bugs (such as typos and misnamed file names) that I might have missed.
+  * I will not rely on it for detailed design and animation implementation, as some concepts may be too specific or require deeper customization beyond general guidance that it can give me.
+  * I will not use it to come up with my ideas for visuals and interaction elements, as this will limit my originality and creativity on the project.
+  * I will use it to brainstorm visual ideas for the interactive elements because I can starting working out animations and interactions this way before I gather all my content.  
 
 ### *Responsible Use*
 
-How would you use Generative AI responsibly? 
-
----
+I’ll use Generative AI tools responsibly by verifying the accuracy of generated suggestions, adapting them to fit my unique project needs. I will also be ensuring that my work is original and aligned with ethical use practices.
 
 
 
