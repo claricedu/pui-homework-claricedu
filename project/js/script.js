@@ -1,193 +1,116 @@
+const current = document.querySelector("#current");
+const blackberryContainer = document.querySelector("#blackberry-bush");
+
+let newX = 0, newY = 0, startX = 0, startY = 0;
+let phrase = 0;
 
 
-const s1p1 = document.querySelector("#s1p1");
+var stanza1 = [
+    "through the blackberry bushes",
+    "but the thorns are just handlebars",
+    "and the berries-----",
+    "the berries dye our feet purple."    
+]
 
-s1p1.addEventListener("click", () => {
+current.addEventListener('mousedown', mouseDown);
+
+function mouseOver() {
+    console.log("hover");
+    current.style.color = "blue";
+    current.addEventListener('mouseout', mouseOut);
+}
+
+function mouseOut() {
+    current.style.color = "black";
+}
+
+function click() {
     console.log("clicked");
-    // s1p1.innerText = `clicked`;
+    setdownPhrase();
+    // Update current's text to the next stanza
+    current.innerText = stanza1[phrase];
+    phrase += 1; // Increment the phrase for the next stanza
 
-    const s1p2 = document.createElement("p");
-    s1p2.innerText = "the blackberry bushes";
-    stanza1=document.querySelector("body");
-    stanza1.appendChild(s1p2);
+    console.log("phrase: ", phrase);
+
+    // Move current to appear below the new setPhrase
+    const newTop = parseInt(setPhrase.style.top) + 50; // Adjust spacing below setPhrase
+    current.style.top = `${newTop}px`; 
+
+    current.removeEventListener('click', click);
+    current.addEventListener('mousedown', mouseDown);
+}
 
 
+function mouseDown(e) {
+    e.preventDefault(); // Prevent text selection
+    startX = e.clientX;
+    startY = e.clientY;
+    document.addEventListener('mousemove', mouseMove);
+    document.addEventListener('mouseup', mouseUp);
+    console.log("mousedown");
+}
+
+function mouseMove(e) { 
+    e.preventDefault();
+    newX = startX- e.clientX;
+    newY = startY - e.clientY;
+
+    startX = e.clientX;
+    startY = e.clientY;
+
+    current.style.top = startY + 'px';
+    current.style.left = startX + 'px';
+
+    // console.log(newX, newY);
+    // console.log(startX, startY);
+}
+
+function mouseUp(e) {
+    e.preventDefault();
+    document.removeEventListener('mousemove', mouseMove);
+    if (phrase < stanza1.length ) {
+        setdownPhrase();
+
+        current.innerText = stanza1[phrase];
+        current.style.zIndex = "2"; //overlay it on top
+        phrase +=1;
+        console.log("phrase: ", phrase);
+    } else if (phrase === stanza1.length ) {
+        // stanza1 finished
+        current.removeEventListener('mousedown', mouseDown);
+        phrase +=1;
+        document.addEventListener('click', clearPage);
+    }
+}
+
+function clearPage() {
     
-});
-
-
-
-
-// cartItemContainer.classList.add("cart-item-container");
-
-// const descriptionContainer = document.createElement("div");
-// descriptionContainer.classList.add("cart-item-des-container");
-
-    // Add event listener for remove action
-    removeText.addEventListener("click", () => {
-        removeItemFromCart(roll, cartItemContainer);
-    });
-
-    elemContainer.appendChild(imgElement);
-    elemContainer.appendChild(removeText);
-
-
-
-
-// code from lab4
-const rollInfo = rolls[chosenRoll];  
-
-class Roll {
-    constructor(rollType, rollGlazing, packSize, basePrice) {
-        this.type = rollType;
-        this.glazing = rollGlazing;
-        this.size = packSize;
-        this.basePrice = basePrice;
-    }
+}
+for (let i = 0; i <= stanza1.length; i++) {
+    // const phraseNum = document.querySelector(`phrase-${i}`);
+    // phraseNum.style.display = "none";
 }
 
-// ========================= CART (HMWK 5)
+// Set the current phrase to a new elem, set it to the current mouse position
+function setdownPhrase() {
+    const newPhrase = document.createElement("p");
+    newPhrase.style.position = "absolute";
+    newPhrase.style.top = current.style.top; 
+    newPhrase.style.left = current.style.left;
+    newPhrase.innerText = current.innerText;
+    document.body.appendChild(newPhrase);
+    newPhrase.style.zIndex = "1";
 
-const cartRolls = [
-    new Roll('Original', 'Sugar Milk', 1, 2.49),
-    new Roll('Walnut', 'Vanilla Milk', 12, 3.49),
-    new Roll('Raisin', 'Sugar Milk', 3, 2.99),
-    new Roll('Apple', 'Keep Original', 3, 3.49)
-];
-
-// add the specified cart list to cart array;
-for (let roll of cartRolls) {
-    cart.push(roll);
+    // Assign a unique ID using counter
+    newPhrase.id = `setPhrase-${phrase}`;
 }
 
-// function logic taken from hmwk4's price calculation, but can't reuse 
-// function as original takes the info directly from html element
-function itemTotalPrice (glazing, size, basePrice) {
-    const glazingPriceMap = {
-        'Sugar Milk': 0.00,
-        'Vanilla Milk': 0.50,
-        'Keep Original': 0.00,
-        'None': 0.00
-    };
-    const sizePriceMap = {
-        1: 1,
-        3: 3,
-        6: 5,
-        12: 10
-    }
-    const glazingPrice = glazingPriceMap[glazing];
-    const itemTotalPrice = ((basePrice + glazingPrice) * sizePriceMap[size]);
-    return itemTotalPrice.toFixed(2);
-}
-
-const cartContainer = document.querySelector(".cart-items-container");
-
-for (let i = 0; i < cartRolls.length; i++) {
-    const roll = cartRolls[i];
-    // Main cart-item-container
-    const cartItemContainer = document.createElement("div");
-    cartItemContainer.classList.add("cart-item-container");
-
-    const descriptionContainer = document.createElement("div");
-    descriptionContainer.classList.add("cart-item-des-container");
-
-    // create sub containers
-    const imageAndRemoveContainer = createImageAndRemoveContainer(roll, i, cartItemContainer);
-    const labelContainer = createLabelContainer(roll);
-    const priceContainer = createPriceContainer(roll);
+function increaseCount() {
     
-    descriptionContainer.appendChild(imageAndRemoveContainer);
-    descriptionContainer.appendChild(labelContainer);
-
-    cartItemContainer.appendChild(descriptionContainer);
-    cartItemContainer.appendChild(priceContainer);
-
-    cartContainer.appendChild(cartItemContainer);
 }
 
-// create container for image and remove text;
-function createImageAndRemoveContainer(roll, index, cartItemContainer) {
-    const elemContainer = document.createElement("div");
-
-    const imgElement = document.createElement("img");
-    imgElement.classList.add("cart-img");
-    imgElement.src = `https://claricedu.github.io/pui-homework-claricedu/assets/products/${roll.type.toLowerCase()}-cinnamon-roll.jpg`;
-    imgElement.alt = `${roll.type} cinnamon roll`;
-
-    const removeText = document.createElement("p");
-    removeText.classList.add("cart-remove-text");
-    removeText.innerText = "Remove";
-
-    // Add event listener for remove action
-    removeText.addEventListener("click", () => {
-        removeItemFromCart(roll, cartItemContainer);
-    });
-
-    elemContainer.appendChild(imgElement);
-    elemContainer.appendChild(removeText);
-
-    return elemContainer;
-}
-
-// Function to remove item from cart and DOM
-function removeItemFromCart(roll, cartItemContainer) {
-    const index = cart.indexOf(roll);
-    if (index !== -1) {
-        cart.splice(index, 1); 
-    }
-
-    cartItemContainer.remove(); 
-    console.log("Updated cart: ", cart);
-
-    const cartTotal = cartTotalPrice(cart);
-    const cartTotalPriceElement = document.getElementById('cart-total-price');
-    cartTotalPriceElement.innerText = `$${cartTotal}`;
-
-    if (cart.length === 0) {
-        cartTotalPriceElement.innerText = "$0.00";
-    }
-}
-
-// Create label container and its labels
-function createLabelContainer(roll) {
-    const labelContainer = document.createElement("div");
-
-    const typeLabel = document.createElement("p");
-    typeLabel.innerText = `${roll.type} Cinnamon Roll`;
-    const glazingLabel = document.createElement("p");
-    glazingLabel.innerText = `Glazing: ${roll.glazing}`;
-    const packLabel = document.createElement("p");
-    packLabel.innerText = `Pack size: ${roll.size}`;
-
-    labelContainer.appendChild(typeLabel);
-    labelContainer.appendChild(glazingLabel);
-    labelContainer.appendChild(packLabel);
-
-    return labelContainer;
-}
-
-// Create price container
-function createPriceContainer(roll) {
-    const priceContainer = document.createElement("div");
-    const priceElement = document.createElement("h3");
-    priceElement.innerText = `$${itemTotalPrice(roll.glazing, roll.size, roll.basePrice)}`;
-    priceContainer.appendChild(priceElement);
-
-    return priceContainer;
-}
-
-// Calculate the total cart price
-function cartTotalPrice(cart) {
-    let totalPrice = 0.00;
-    for (let roll of cart) {
-        //itemTotalPrice returns a string
-        const itemPrice = parseFloat(itemTotalPrice(roll.glazing, roll.size, roll.basePrice));
-        totalPrice += itemPrice;
-    }
-    return totalPrice.toFixed(2);
-}
-
-// Initial total price calculation
-const cartTotal = cartTotalPrice(cart);
-const cartTotalPriceElement = document.getElementById('cart-total-price');
-cartTotalPriceElement.innerText = `$${cartTotal}`;
+        // current.appendChild(blackberryContainer);
+        //     blackberryImg = document.createElement("img");
+        //     blackberryImg.src = "./assets/images/blackberryBushes.svg";
+        //     blackberryContainer.appendChild(blackberryImg);

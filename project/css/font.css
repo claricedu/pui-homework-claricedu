@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Jacquard12';
+    src: url('/project/assets/fonts/Jacquard12-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fixedsys-Excelsior';
+    src: url('/project/assets/fonts/Fixedsys-Excelsior301.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'SplineItalics';
+    src: url('/project/assets/fonts/SplineSansMono-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'BIZUDMincho-Reg';
+    src: url('/project/assets/fonts/BIZUDMincho-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
