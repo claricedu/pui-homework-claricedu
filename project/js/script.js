@@ -80,16 +80,19 @@ function mouseUp(e) {
         // stanza1 finished
         current.removeEventListener('mousedown', mouseDown);
         phrase +=1;
+    }
+    else if (phrase === stanza1.length + 1) {
         document.addEventListener('click', clearPage);
     }
 }
 
 function clearPage() {
-    
-}
-for (let i = 0; i <= stanza1.length; i++) {
-    // const phraseNum = document.querySelector(`phrase-${i}`);
-    // phraseNum.style.display = "none";
+    console.log("Page Clear");
+    for (let i = 0; i <= stanza1.length + 1; i++) {
+        const phraseClear = document.querySelector(`#phrase-${i}`);
+        console.log(`${phraseClear.innerText}`)
+        phraseClear.style.display = "none";
+    }
 }
 
 // Set the current phrase to a new elem, set it to the current mouse position
@@ -103,11 +106,9 @@ function setdownPhrase() {
     newPhrase.style.zIndex = "1";
 
     // Assign a unique ID using counter
-    newPhrase.id = `setPhrase-${phrase}`;
-}
-
-function increaseCount() {
-    
+    newPhrase.id = `phrase-${phrase}`;
+    console.log(`ID IS : ${newPhrase.id}`);
+    console.log(`ID IS : ${newPhrase.innerText}`);
 }
 
         // current.appendChild(blackberryContainer);

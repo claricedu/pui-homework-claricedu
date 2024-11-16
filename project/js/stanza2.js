@@ -7,6 +7,5 @@ var stanza2 = [
     "and beetles move the heavy earth"
 ]
 
-if (phrase === 5) {
-    
-}
+//beetles have a move button, move 
+
