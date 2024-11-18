@@ -125,7 +125,7 @@ Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-gener
 
 ## Project Description
 
-My chosen idea will be a collaboration between me and a friend, Emma Li, where I create an interactive playthrough/visualization of part 1 of her poem "How Small the Beattles Run". The design will feature different visual representations of the poem, the poem itself, that are interactive for the user through screen actions such as clicking, hovering, dragging, and scrolling.
+My chosen idea will be a collaboration between me and a friend, Emma Li, where I create an interactive playthrough/visualization of part 1 of her poem "How Small the Beetles Run". The design will feature different visual representations of the poem, the poem itself, that are interactive for the user through screen actions such as clicking, hovering, dragging, and scrolling.
 
 ## High-Fi Prototypes
 
