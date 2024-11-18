@@ -12,16 +12,57 @@ p {
 }
 
 
-/* Style the container div */
 #blackberry-bush {
-    width: 300px; 
-    height: 200px;        
-    display: flex;
+    position: absolute;
+    bottom: 50px;
+    left: 200px;
+    width: 1200px;
+    height: 200px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none;
+
+    /* Initially hidden */
+    /* visibility: hidden;
+    opacity: 0;       
+    transition: opacity 0.5s ease;  */
 }
+
+
 
 /* Style the image inside the div */
 #blackberry-bush img {
     width: 100%;    /* Make the image take the full width of the div */
     height: 100%;   /* Make the image take the full height of the div */
     object-fit: cover; /* Adjust how the image fills the div */
+}
+
+#beetle-container {
+    position: absolute;
+    bottom: 50px;
+    left: 200px;
+    width: auto; /*1200px*/
+    height: 200px;
+    display: flex;
+    flex-direction: row; /* Horizontal arrangement */
+    align-items: center;
+    gap: 20px; 
+    padding: 10px;
+    overflow-x: auto; /* Allow scrolling if content exceeds container width */
+}
+
+#beetle-img-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Space between beetles */
+    align-items: center;
+}
+
+
+/* Image styling */
+#beetle-img-container img {
+    width: 200px; /* Adjust size of the beetles */
+    height: auto;
 }

@@ -7,5 +7,15 @@ var stanza2 = [
     "and beetles move the heavy earth"
 ]
 
-//beetles have a move button, move 
+const beetleImgContainer = document.querySelector("#beetle-img-container");
+const addButton = document.querySelector("#add-beetle-button");
 
+addButton.addEventListener("click", () => {
+    const newBeetle = document.createElement("img");
+    newBeetle.src = "./assets/images/blackberryBushes.svg";
+    newBeetle.alt = "A beetle";
+    newBeetle.style.width = "50px"; // Match the original beetle size
+    newBeetle.style.height = "auto";
+    beetleImgContainer.appendChild(newBeetle); // Add to the beetle-img div
+    console.log("beetle added");
+});

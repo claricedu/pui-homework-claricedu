@@ -4,6 +4,20 @@ const blackberryContainer = document.querySelector("#blackberry-bush");
 let newX = 0, newY = 0, startX = 0, startY = 0;
 let phrase = 0;
 
+let phrase1, phrase2, phrase3, phrase4, phrase5;
+
+
+addBeetleClickListener();
+
+function addBeetleClickListener() {
+    if (phrase1) {
+        phrase1.addEventListener("click", () => {
+            console.log("Beetle clicked!");
+        });
+    }
+}
+
+
 
 var stanza1 = [
     "through the blackberry bushes",
@@ -72,6 +86,7 @@ function mouseUp(e) {
     if (phrase < stanza1.length ) {
         setdownPhrase();
 
+        phrase1 = "boop";
         current.innerText = stanza1[phrase];
         current.style.zIndex = "2"; //overlay it on top
         phrase +=1;
