@@ -1,42 +1,4 @@
-const current = document.querySelector("#current");
-const blackberryContainer = document.querySelector("#blackberry-bush");
-
-let newX = 0, newY = 0, startX = 0, startY = 0;
-let phrase = 0;
-
-let phrase1, phrase2, phrase3, phrase4, phrase5;
-
-
-addBeetleClickListener();
-
-function addBeetleClickListener() {
-    if (phrase1) {
-        phrase1.addEventListener("click", () => {
-            console.log("Beetle clicked!");
-        });
-    }
-}
-
-
-
-var stanza1 = [
-    "through the blackberry bushes",
-    "but the thorns are just handlebars",
-    "and the berries-----",
-    "the berries dye our feet purple."    
-]
-
-current.addEventListener('mousedown', mouseDown);
-
-function mouseOver() {
-    console.log("hover");
-    current.style.color = "blue";
-    current.addEventListener('mouseout', mouseOut);
-}
-
-function mouseOut() {
-    current.style.color = "black";
-}
+//animations functions 
 
 function click() {
     console.log("clicked");
@@ -54,6 +16,17 @@ function click() {
     current.removeEventListener('click', click);
     current.addEventListener('mousedown', mouseDown);
 }
+
+function mouseOver() {
+    console.log("hover");
+    current.style.color = "blue";
+    current.addEventListener('mouseout', mouseOut);
+}
+
+function mouseOut() {
+    current.style.color = "black";
+}
+
 
 
 function mouseDown(e) {
@@ -86,7 +59,7 @@ function mouseUp(e) {
     if (phrase < stanza1.length ) {
         setdownPhrase();
 
-        phrase1 = "boop";
+        // phrase1 = "boop";
         current.innerText = stanza1[phrase];
         current.style.zIndex = "2"; //overlay it on top
         phrase +=1;
@@ -102,12 +75,8 @@ function mouseUp(e) {
 }
 
 function clearPage() {
-    console.log("Page Clear");
-    for (let i = 0; i <= stanza1.length + 1; i++) {
-        const phraseClear = document.querySelector(`#phrase-${i}`);
-        console.log(`${phraseClear.innerText}`)
-        phraseClear.style.display = "none";
-    }
+    console.log("Page Cleared");
+    document.body.innerHTML = '';
 }
 
 // Set the current phrase to a new elem, set it to the current mouse position
@@ -125,8 +94,3 @@ function setdownPhrase() {
     console.log(`ID IS : ${newPhrase.id}`);
     console.log(`ID IS : ${newPhrase.innerText}`);
 }
-
-        // current.appendChild(blackberryContainer);
-        //     blackberryImg = document.createElement("img");
-        //     blackberryImg.src = "./assets/images/blackberryBushes.svg";
-        //     blackberryContainer.appendChild(blackberryImg);

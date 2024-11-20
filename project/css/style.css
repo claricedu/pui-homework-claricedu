@@ -23,11 +23,6 @@ p {
     align-items: center;
     overflow: hidden;
     display: none;
-
-    /* Initially hidden */
-    /* visibility: hidden;
-    opacity: 0;       
-    transition: opacity 0.5s ease;  */
 }
 
 
