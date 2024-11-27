@@ -4,12 +4,16 @@ const blackberryContainer = document.querySelector("#blackberry-bush");
 
 let newX = 0, newY = 0, startX = 0, startY = 0;
 let phrase = 0;
+let mousedownActive = false;
 
 current.addEventListener('mousedown', mouseDown);
 
 
 function mouseDown(e) {
     e.preventDefault();
+    mousedownActive = true;
+
+
     startX = e.clientX;
     startY = e.clientY;
     document.addEventListener('mousemove', mouseMove);
@@ -30,97 +34,46 @@ function mouseMove(e) {
 }
 
 function mouseUp(e) {
+    if (!mousedownActive) return;
     e.preventDefault();
+
     document.removeEventListener('mousemove', mouseMove);
+    mousedownActive  = false;
     
     switch (phrase) {
         case 0:
         case 1:
         case 2:
         case 3:
-        // case 7:
+        case 4:
+        case 5:
+        case 6:
+        case 7:
         case 8:
             setdownPhrase();
-    
-            current.innerText = stanza1[phrase];
-            current.style.zIndex = "2"; // Overlay it on top
-            phrase += 1;
-            console.log("phrase: ", phrase);
-            break;
-    
-        case 4:
-            // stanza1 finished
-            // current.removeEventListener('mousedown', mouseDown);
-            console.log("mouseup phrase num", phrase);
+            makeNewPhrase();
             phrase += 1;
             break;
-    
-        case 5:
-            phrase += 1;
-            document.addEventListener('click', clearPage);
-            break;
-    
-        case 6:
-            document.removeEventListener('click', clearPage);
-            
-
-            // Make it visible again
-            current.style.opacity = "1";
-            current.style.pointerEvents = "auto";
-
-            // Reattach the mouseDown event listener
-            current.removeEventListener('mousedown', mouseDown); // Avoid duplicate listeners
-            current.addEventListener('mousedown', mouseDown);
-
-            setdownPhrase();
-    
-            current.innerText = stanza1[phrase];
-            current.style.zIndex = "2"; // Overlay it on top
-            phrase += 1;
-            console.log("phrase: ", phrase);
-            break;
-
-        case 7:
-            setdownPhrase();
-            current.innerText = stanza1[phrase];
-            current.style.zIndex = "2"; // Overlay it on top
-        
-        
-            phrase += 1;
-            console.log("phrase: ", phrase);
-            break;
-            
         case 9:
             beetleContainer.style.display = "flex";
+            setdownPhrase();
+            makeNewPhrase();
+            phrase += 1;
             break;
-    
+        case 10: 
+            setdownPhrase();
+            // makeNewPhrase();
+            // phrase += 1;
+            current.removeEventListener('mousedown', mouseDown);
+            break;
         default:
             console.log("No matching case for phrase:", phrase);
     }
     
 }
 
-function clearPage() {
-    const body = document.body;
-    const elements = Array.from(body.children); // Get all child elements in body
 
-    elements.forEach((child) => {
-        if (child.id !== "#current") {
-            body.removeChild(child); 
-        }
-    });
-
-    if (current) {
-        // Use opacity to hide while preserving event listeners
-        current.style.opacity = "0";
-        current.style.pointerEvents = "none"; // Prevent user interaction
-    } else {
-        console.error('Element with id "current" not found.');
-    }
-}
-
-
-// Set the current phrase to a new elem, set it to the current mouse position
+// Set the current phrase to a new elem and set to the current mouse position
 function setdownPhrase() {
     const newPhrase = document.createElement("p");
     newPhrase.style.position = "absolute";
@@ -130,8 +83,24 @@ function setdownPhrase() {
     document.body.appendChild(newPhrase);
     newPhrase.style.zIndex = "1";
 
-    // Assign a unique ID using counter
     newPhrase.id = `phrase-${phrase}`;
-    // console.log(`ID IS : ${newPhrase.id}`);
-    // console.log(`ID IS : ${newPhrase.innerText}`);
+
+    if (newPhrase.id === 'phrase-10') {
+        const aElement = document.createElement('a');
+        aElement.href = "stanza2.html";
+        aElement.innerText = "ENTER";
+
+        // newPhrase.innerText = "<";
+        newPhrase.appendChild(aElement);
+
+        const moreText = document.createElement('p');
+        moreText.innerText= "some more elems"
+        newPhrase.appendChild(moreText);
+    }
+    console.log("setPhrase id and internal words: ", newPhrase.id, newPhrase.innerText)
+}
+
+function makeNewPhrase() {
+    current.innerText = stanza1[phrase];
+    current.style.zIndex = "2"; // Overlay it on top
 }

@@ -8,6 +8,7 @@ var stanza1 = [
     "and if we run fast enough",
     "pebbles are springs under our feet",    
     "and beetles move the heavy earth",
+    ">>",
     "lay down in the soil",
     "and inhale",
     "it smells like sweat salted summer",
