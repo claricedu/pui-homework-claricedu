@@ -8,7 +8,7 @@ body {
 
 
 p {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 
@@ -35,13 +35,14 @@ p {
 }
 
 #beetle-container {
+    display: none; /*hide at first*/
+
     position: absolute;
     bottom: 50px;
     left: 200px;
-    width: auto; /*1200px*/
+    width: auto;
     height: 200px;
-    display: flex;
-    flex-direction: row; /* Horizontal arrangement */
+    flex-direction: row; 
     align-items: center;
     gap: 20px; 
     padding: 10px;
@@ -56,8 +57,7 @@ p {
 }
 
 
-/* Image styling */
-#beetle-img-container img {
-    width: 200px; /* Adjust size of the beetles */
+.beetle-img {
+    width: 60px; 
     height: auto;
 }

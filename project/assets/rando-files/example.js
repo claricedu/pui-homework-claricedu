@@ -1,3 +1,60 @@
+
+
+function animation(e) {
+    e.preventDefault();
+
+    switch (phrase) {
+        case 0:
+            phrase += 1;
+            return mouseDown(e);
+        case 1:
+            blackberryContainer.style.display = "block";
+            current.appendChild(blackberryContainer);
+            blackberryImg = document.createElement("img");
+            blackberryImg.src = "./assets/images/blackberryBushes.svg";
+            blackberryContainer.appendChild(blackberryImg);
+
+            phrase += 1;
+            return mouseDown(e);
+        case 2: 
+            phrase += 1;
+            return mouseDown(e);
+        case 3:
+            phrase += 1;
+            return mouseDown(e);
+        case 4:
+            phrase += 1;
+            return mouseDown(e);
+            console.log("mouseup phrase num", phrase );
+        case 5: 
+            // current.removeEventListener('mousedown', animation);
+            console.log("getting to case 5");
+
+            phrase +=1;
+            return mouseDown(e);
+            // document.addEventListener('click', clearPage);
+        case 6:
+            phrase += 1;
+            return mouseDown(e);
+        case 7:
+            phrase += 1;
+            return mouseDown(e);
+        case 8:
+            phrase += 1;
+            return mouseDown(e);
+        case 9:
+            beetleContainer.style.display = "flex";
+            phrase += 1;
+            return mouseDown(e);
+        case 10:
+            phrase += 1;
+            return mouseDown(e);
+
+    }
+}
+
+
+
 const queryString = window.location.search;
 
 console.log(queryString);
