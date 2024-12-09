@@ -1,12 +1,13 @@
 
 const current = document.querySelector("#current");
-const blackberryContainer = document.querySelector("#blackberry-bush");
+// const blackberryContainer = document.querySelector("#blackberry-bush");
 
 let newX = 0, newY = 0, startX = 0, startY = 0;
-let phrase = 0;
+let count = 0;
 let mousedownActive = false;
 
 current.addEventListener('mousedown', mouseDown);
+
 
 
 function mouseDown(e) {
@@ -34,56 +35,76 @@ function mouseMove(e) {
 }
 
 function mouseUp(e) {
-    if (!mousedownActive) return;
     e.preventDefault();
 
+    if (!mousedownActive) return;
+
     document.removeEventListener('mousemove', mouseMove);
-    mousedownActive  = false;
+    mousedownActive = false;
     
-    switch (phrase) {
+    switch (count) {
         case 0:
-        case 1:
-        case 2:
         case 3:
         case 4:
         case 5:
         case 6:
         case 7:
         case 8:
-            setdownPhrase();
+            setdownPhrase(current.innerText);
+
             makeNewPhrase();
-            phrase += 1;
+            count += 1;
+            break;
+        case 1:
+            const phraseOne = makePhraseOne();
+            setdownPhrase(phraseOne);
+            makeNewPhrase();
+            count += 1;
+            break;
+
+        case 2:
+            setdownPhrase(current.innerText);
+            makeNewPhrase();
+            count += 1;
             break;
         case 9:
             beetleContainer.style.display = "flex";
             setdownPhrase();
             makeNewPhrase();
-            phrase += 1;
+            count += 1;
             break;
         case 10: 
             setdownPhrase();
             // makeNewPhrase();
-            // phrase += 1;
+            // count += 1;
             current.removeEventListener('mousedown', mouseDown);
             break;
         default:
-            console.log("No matching case for phrase:", phrase);
+            console.log("No matching case for count:", count);
     }
     
 }
 
 
-// Set the current phrase to a new elem and set to the current mouse position
-function setdownPhrase() {
+// Set the current phrase to a new elem, and fix that to the current mouse position
+function setdownPhrase(phraseText) {
     const newPhrase = document.createElement("p");
     newPhrase.style.position = "absolute";
     newPhrase.style.top = current.style.top; 
     newPhrase.style.left = current.style.left;
-    newPhrase.innerText = current.innerText;
+
+    // handling diff cases of clickable phrases vs string phrases
+    if (typeof phraseText === 'string') {
+        const textNode = document.createTextNode(phraseText);
+        newPhrase.appendChild(textNode);
+    } else {
+        newPhrase.appendChild(phraseText);
+    }
+
     document.body.appendChild(newPhrase);
     newPhrase.style.zIndex = "1";
 
-    newPhrase.id = `phrase-${phrase}`;
+    newPhrase.id = `phrase-${count}`;
 
     if (newPhrase.id === 'phrase-10') {
         const aElement = document.createElement('a');
@@ -100,7 +121,31 @@ function setdownPhrase() {
     console.log("setPhrase id and internal words: ", newPhrase.id, newPhrase.innerText)
 }
 
+function makePhraseOne() {
+    const container = document.createElement("span");
+
+    const textBeforeLink = document.createTextNode('through the ');
+    container.appendChild(textBeforeLink);
+
+    // Creating clickable text
+    const clickableText = document.createElement("a");
+    clickableText.innerText = "blackberry bushes";
+    clickableText.style.cursor = "pointer"; // Optional: make it look clickable
+    clickableText.addEventListener('click', function () {
+        const blackberryBush = document.getElementById('blackberry-bush');
+        blackberryBush.style.display = 'block';
+    });
+    container.appendChild(clickableText);
+
+    const textAfterLink = document.createTextNode(';');
+    container.appendChild(textAfterLink);
+
+    console.log("phrase 1 is: ", container);
+    return container;
+}
+
+
 function makeNewPhrase() {
-    current.innerText = stanza1[phrase];
-    current.style.zIndex = "2"; // Overlay it on top
+    current.innerText = stanza1[count];
+    current.style.zIndex = "2";
 }
