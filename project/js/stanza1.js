@@ -1,8 +1,8 @@
 var stanza1 = [
     "through the blackberry bushes",
     "but the thorns are just handlebars",
-    "and the berries-----",
-    "the berries dye our feet purple.",
+    "and the berries",
+    "dye our feet purple.",
     "The dirt is alive",
     "it grows like the sky",
     "and if we run fast enough",

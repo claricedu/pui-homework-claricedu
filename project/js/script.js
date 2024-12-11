@@ -8,7 +8,10 @@ let mousedownActive = false;
 
 current.addEventListener('mousedown', mouseDown);
 
+const bgVideo = document.getElementById('background-video');
+bgVideo.playbackRate = 0.05;
 
+springVideo = document.getElementById('spring-video')
 
 function mouseDown(e) {
     e.preventDefault();
@@ -49,9 +52,14 @@ function mouseUp(e) {
         case 5:
         case 6:
         case 7:
-        case 8:
             setdownPhrase(current.innerText);
 
+            makeNewPhrase();
+            count += 1;
+            break;
+        case 8:
+            // springVideo.style.display = "flex";
+            setdownPhrase(current.innerText);
             makeNewPhrase();
             count += 1;
             break;
@@ -69,12 +77,12 @@ function mouseUp(e) {
             break;
         case 9:
             beetleContainer.style.display = "flex";
-            setdownPhrase();
+            setdownPhrase(current.innerText);
             makeNewPhrase();
             count += 1;
             break;
         case 10: 
-            setdownPhrase();
+            setdownPhrase(current.innerText);
             // makeNewPhrase();
             // count += 1;
             current.removeEventListener('mousedown', mouseDown);
@@ -85,20 +93,24 @@ function mouseUp(e) {
     
 }
 
+function makeNewPhrase() {
+    current.innerText = stanza1[count];
+    current.style.zIndex = "2";
+}
 
 // Set the current phrase to a new elem, and fix that to the current mouse position
-function setdownPhrase(phraseText) {
+function setdownPhrase(innerText) {
     const newPhrase = document.createElement("p");
     newPhrase.style.position = "absolute";
     newPhrase.style.top = current.style.top; 
     newPhrase.style.left = current.style.left;
 
     // handling diff cases of clickable phrases vs string phrases
-    if (typeof phraseText === 'string') {
-        const textNode = document.createTextNode(phraseText);
+    if (typeof innerText === 'string') {
+        const textNode = document.createTextNode(innerText);
         newPhrase.appendChild(textNode);
     } else {
-        newPhrase.appendChild(phraseText);
+        newPhrase.appendChild(innerText);
     }
 
     document.body.appendChild(newPhrase);
@@ -115,7 +127,7 @@ function setdownPhrase(phraseText) {
         newPhrase.appendChild(aElement);
 
         const moreText = document.createElement('p');
-        moreText.innerText= "some more elems"
+        moreText.innerText= " "
         newPhrase.appendChild(moreText);
     }
     console.log("setPhrase id and internal words: ", newPhrase.id, newPhrase.innerText)
@@ -130,22 +142,29 @@ function makePhraseOne() {
     // Creating clickable text
     const clickableText = document.createElement("a");
     clickableText.innerText = "blackberry bushes";
-    clickableText.style.cursor = "pointer"; // Optional: make it look clickable
     clickableText.addEventListener('click', function () {
         const blackberryBush = document.getElementById('blackberry-bush');
         blackberryBush.style.display = 'block';
     });
     container.appendChild(clickableText);
 
-    const textAfterLink = document.createTextNode(';');
-    container.appendChild(textAfterLink);
-
-    console.log("phrase 1 is: ", container);
     return container;
 }
 
+function makePhraseEight() {
+    const container = document.createElement("span");
 
-function makeNewPhrase() {
-    current.innerText = stanza1[count];
-    current.style.zIndex = "2";
+    // Creating clickable text
+    const clickableText = document.createElement("a");
+    clickableText.innerText = "pebbles";
+    clickableText.addEventListener('click', function () {
+        const blackberryBush = document.getElementById('springs-video');
+        blackberryBush.style.display = 'block';
+    });
+    container.appendChild(clickableText);
+
+    const textAfterLink = document.createTextNode('are springs under our feet');
+    container.appendChild(textAfterLink);
+
+    return container;
 }

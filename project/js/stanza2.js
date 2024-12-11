@@ -5,7 +5,7 @@ const moveText = document.querySelector("#move-beetle-text");
 document.addEventListener("DOMContentLoaded", () => {
     moveText.addEventListener("click", () => {
         const newBeetle = document.createElement("img");
-        newBeetle.src = "./assets/images/beetle2.png";
+        newBeetle.src = "./assets/images/beetle10.png";
         newBeetle.alt = "A beetle";
         beetleImgContainer.appendChild(newBeetle);
 
