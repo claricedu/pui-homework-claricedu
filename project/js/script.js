@@ -9,9 +9,10 @@ let mousedownActive = false;
 current.addEventListener('mousedown', mouseDown);
 
 const bgVideo = document.getElementById('background-video');
-bgVideo.playbackRate = 0.05;
+bgVideo.playbackRate = 0.2;
 
 springVideo = document.getElementById('spring-video')
+
 
 function mouseDown(e) {
     e.preventDefault();
@@ -50,15 +51,6 @@ function mouseUp(e) {
         case 3:
         case 4:
         case 5:
-        case 6:
-        case 7:
-            setdownPhrase(current.innerText);
-
-            makeNewPhrase();
-            count += 1;
-            break;
-        case 8:
-            // springVideo.style.display = "flex";
             setdownPhrase(current.innerText);
             makeNewPhrase();
             count += 1;
@@ -75,6 +67,23 @@ function mouseUp(e) {
             makeNewPhrase();
             count += 1;
             break;
+        case 6:
+            setdownPhrase(current.innerText);
+            makeNewPhrase();
+            count += 1;
+            break;
+        case 7:
+            setdownPhrase(current.innerText);
+
+            makeNewPhrase();
+            count += 1;
+            break;
+        case 8:
+            springVideo.style.display = "block";
+            setdownPhrase(current.innerText);
+            makeNewPhrase();
+            count += 1;
+                break;
         case 9:
             beetleContainer.style.display = "flex";
             setdownPhrase(current.innerText);
@@ -142,9 +151,12 @@ function makePhraseOne() {
     // Creating clickable text
     const clickableText = document.createElement("a");
     clickableText.innerText = "blackberry bushes";
+    clickableText.className = 'clickable-text';
     clickableText.addEventListener('click', function () {
         const blackberryBush = document.getElementById('blackberry-bush');
         blackberryBush.style.display = 'block';
+
+        clickableText.classList.add('clickable-text-clicked');
     });
     container.appendChild(clickableText);
 

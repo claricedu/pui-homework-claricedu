@@ -1,5 +1,6 @@
 body {
-    font-family: 'Fixedsys-Excelsior', sans-serif;
+    font-family: 'Jacquard12', sans-serif;
+    /* font-family: 'Fixedsys-Excelsior', sans-serif; */
     /* text-align: center;
     margin-bottom: 200px; */
     margin-left: 40px;
@@ -8,8 +9,8 @@ body {
 
 
 p {
-    font-size: 20px;
-    color: black;
+    font-size: 30px;
+    color: rgb(38, 38, 38);
 }
 
 #dirt1-image {
@@ -36,7 +37,7 @@ p {
 
 #dirt3-image {
     position: fixed;   
-    top: 367px;              
+    top: 427px;              
     left: 570px;             
     width: 200px;        
     object-fit: cover;    
@@ -67,7 +68,7 @@ p {
 }
 
 #spring-video {
-    /* display: none; */
+    display: none;
     width: 150px;          
     height: 90px;         
     border-radius: 50%;   
@@ -80,7 +81,7 @@ p {
     transform: translate(-50%, -50%); /
 }
 
-.background-video {
+#background-video {
     position: fixed;       
     top: 0;                
     left: 0;               
@@ -89,7 +90,7 @@ p {
     object-fit: cover;    
     z-index: -1;   
     object-position: top;   /* Aligns the top of the video */
-    opacity: 0.5;  
+    opacity: 0.1;  
 }
 
 
@@ -97,8 +98,8 @@ p {
     position: fixed;
     top: 30px;
     right: 40px;
-    width: 200px;
-    height: 150px;
+    width: 140px;
+    height: 100px;
     z-index: 1;     
     justify-content: center;
     align-items: center;
@@ -106,14 +107,33 @@ p {
     display: none;
 }
 
-
-
 /* Style the image inside the div */
 #blackberry-bush img {
     width: 100%;    /* Make the image take the full width of the div */
     height: 100%;   /* Make the image take the full height of the div */
     object-fit: cover; /* Adjust how the image fills the div */
 }
+
+
+#blackberry {
+    position: fixed;
+    top: 140px;
+    left: 0%;
+    height: 160px;  
+    width: auto;   
+    display: flex;     /* Aligns items in a row */
+    flex-direction: column; 
+    align-items: center;
+    gap: 0px;
+}
+
+#blackberry img {
+    width: 80px; 
+    height: auto;      
+    object-fit: contain;
+}
+
+
 
 #beetle-container {
     display: none; 
@@ -127,7 +147,7 @@ p {
     gap: 20px; 
     padding: 10px;
     overflow-x: auto; /* Allow scrolling if content exceeds container width */
-    z-index: 2;    
+    z-index: 10;    
 }
 
 #beetle-img-container {
@@ -141,4 +161,26 @@ p {
 .beetle-img {
     width: 60px; 
     height: auto;
+}
+
+
+.clickable-text {
+    color: black;           /* Default color */
+    cursor: pointer;        /* Change cursor to pointer on hover */
+    font-family: 'Fixedsys-Excelsior', sans-serif;
+    font-size: 24px;
+    /* transition: color 0.3s;  */
+}
+
+.clickable-text {
+    color: rgb(103, 41, 103);          /* Text color changes to purple on hover */
+    font-size:20px;
+}
+
+
+.clickable-text-clicked {
+    color: rgb(38, 38, 38);
+    font-family: 'Jacquard12', sans-serif;
+    font-size: 30px;
+    pointer-events: none; /* Optional: Disable further interaction */
 }
