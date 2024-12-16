@@ -1,18 +1,16 @@
+let contentDisplayed = false;
+
 document.addEventListener("DOMContentLoaded", () => {
-    // const title = document.querySelector("#title");
-    const authors = document.querySelector('#authors');
-    // const current = document.querySelector("#current");
+    const credits = document.querySelector('#credits');
     const enter = document.querySelector('#enter-text');
 
-    // let count = 0;
-
-    // current.style.display = "none";
-    authors.style.display="none";
-    enter.style.display="none";
-
-
+    // Single click listener for the entire document
     document.addEventListener("click", () => {
-            authors.style.display="block";
-            enter.style.display="block";
+        if (!contentDisplayed) {
+            credits.style.display = "block";
+            contentDisplayed = true;
+        } else {
+            window.location.href = "stanza.html";
+        }
     });
 });

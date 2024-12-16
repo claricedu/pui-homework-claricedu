@@ -1,6 +1,5 @@
 
 const current = document.querySelector("#current");
-// const blackberryContainer = document.querySelector("#blackberry-bush");
 
 let newX = 0, newY = 0, startX = 0, startY = 0;
 let count = 0;
@@ -8,22 +7,29 @@ let mousedownActive = false;
 
 current.addEventListener('mousedown', mouseDown);
 
-const bgVideo = document.getElementById('background-video');
-bgVideo.playbackRate = 0.2;
+const backgroundVideo = document.getElementById('background-video');
+backgroundVideo.playbackRate = 0.02;
 
-springVideo = document.getElementById('spring-video')
+springVideo = document.getElementById('spring-video');
 
+window.addEventListener("mousedown", function () {
+    const music = document.getElementById("background-music");
+    music.play().catch((error) => {
+        console.error("Audio playback failed:", error);
+    });
+    music.loop = true;
+    music.playbackRate = 0.2;
+
+});
 
 function mouseDown(e) {
     e.preventDefault();
     mousedownActive = true;
 
-
     startX = e.clientX;
     startY = e.clientY;
     document.addEventListener('mousemove', mouseMove);
     document.addEventListener('mouseup', mouseUp);
-    console.log("mousedown");
 }
 
 function mouseMove(e) { 
@@ -38,6 +44,12 @@ function mouseMove(e) {
     current.style.left = startX + 'px';
 }
 
+function handlePhrase(phrase) {
+    setdownPhrase(phrase);
+    makeNewPhrase();
+    count += 1;
+}
+
 function mouseUp(e) {
     e.preventDefault();
 
@@ -47,53 +59,40 @@ function mouseUp(e) {
     mousedownActive = false;
     
     switch (count) {
-        case 0:
-        case 3:
-        case 4:
-        case 5:
-            setdownPhrase(current.innerText);
-            makeNewPhrase();
-            count += 1;
-            break;
         case 1:
-            const phraseOne = makePhraseOne();
-            setdownPhrase(phraseOne);
-            makeNewPhrase();
-            count += 1;
+            handlePhrase(makePhraseOne());
             break;
-
+        case 0:
         case 2:
-            setdownPhrase(current.innerText);
-            makeNewPhrase();
-            count += 1;
+        case 5:
+        case 6:
+        case 7:
+        case 10:
+        case 11:
+            handlePhrase(stanzaAfter[count]);
+            break;
+        case 3:
+            const blackberryContainer= document.getElementById('blackberry');
+            blackberryContainer.style.display="flex";
+            
+            handlePhrase(stanzaAfter[count]);
+            break;
+        case 4:
+            handlePhrase(makePhraseFour());
             break;
         case 6:
-            setdownPhrase(current.innerText);
-            makeNewPhrase();
-            count += 1;
-            break;
-        case 7:
-            setdownPhrase(current.innerText);
-
-            makeNewPhrase();
-            count += 1;
+            handlePhrase(stanzaAfter[count]);
             break;
         case 8:
             springVideo.style.display = "block";
-            setdownPhrase(current.innerText);
-            makeNewPhrase();
-            count += 1;
-                break;
+            handlePhrase(stanzaAfter[count]);
+            break;
         case 9:
             beetleContainer.style.display = "flex";
-            setdownPhrase(current.innerText);
-            makeNewPhrase();
-            count += 1;
+            handlePhrase(stanzaAfter[count]);
             break;
-        case 10: 
-            setdownPhrase(current.innerText);
-            // makeNewPhrase();
-            // count += 1;
+        case 12: 
+            setdownPhrase(makePhraseTwelve());
             current.removeEventListener('mousedown', mouseDown);
             break;
         default:
@@ -103,7 +102,7 @@ function mouseUp(e) {
 }
 
 function makeNewPhrase() {
-    current.innerText = stanza1[count];
+    current.innerText = stanzaBefore[count];
     current.style.zIndex = "2";
 }
 
@@ -126,20 +125,6 @@ function setdownPhrase(innerText) {
     newPhrase.style.zIndex = "1";
 
     newPhrase.id = `phrase-${count}`;
-
-    if (newPhrase.id === 'phrase-10') {
-        const aElement = document.createElement('a');
-        aElement.href = "stanza2.html";
-        aElement.innerText = "ENTER";
-
-        // newPhrase.innerText = "<";
-        newPhrase.appendChild(aElement);
-
-        const moreText = document.createElement('p');
-        moreText.innerText= " "
-        newPhrase.appendChild(moreText);
-    }
-    console.log("setPhrase id and internal words: ", newPhrase.id, newPhrase.innerText)
 }
 
 function makePhraseOne() {
@@ -154,8 +139,13 @@ function makePhraseOne() {
     clickableText.className = 'clickable-text';
     clickableText.addEventListener('click', function () {
         const blackberryBush = document.getElementById('blackberry-bush');
-        blackberryBush.style.display = 'block';
 
+        // Positioning container above the clickable-text
+        const rect = clickableText.getBoundingClientRect();
+        blackberryBush.style.left = `${rect.left}px`;
+        blackberryBush.style.top = `${rect.top - blackberryBush.offsetHeight}px`;
+
+        blackberryBush.style.display = "block";
         clickableText.classList.add('clickable-text-clicked');
     });
     container.appendChild(clickableText);
@@ -163,20 +153,51 @@ function makePhraseOne() {
     return container;
 }
 
-function makePhraseEight() {
-    const container = document.createElement("span");
 
-    // Creating clickable text
+function makePhraseFour() {
     const clickableText = document.createElement("a");
-    clickableText.innerText = "pebbles";
+    clickableText.innerText = "Dye our feet purple.";
+    clickableText.className = 'clickable-text';
     clickableText.addEventListener('click', function () {
-        const blackberryBush = document.getElementById('springs-video');
-        blackberryBush.style.display = 'block';
+        const blackberryImages = document.querySelectorAll('#blackberry img');
+
+        blackberryImages.forEach(function (img) {
+            img.src = './assets/images/smushedBlackberry.png'; 
+            img.alt = 'ASCII art of a smushed blackberry in purple'; 
+        });
+
+        clickableText.classList.add('clickable-text-clicked');
     });
-    container.appendChild(clickableText);
-
-    const textAfterLink = document.createTextNode('are springs under our feet');
-    container.appendChild(textAfterLink);
-
-    return container;
+    return clickableText;
 }
+
+function makePhraseTwelve() {
+
+    const clickableText = document.createElement("a");
+    clickableText.href = "finis.html";
+    clickableText.innerText = "..........";
+    clickableText.className = "clickable-text";
+
+    clickableText.addEventListener("click", function (e) {
+        e.preventDefault(); 
+        window.location.href = "finis.html";
+    });
+
+    return clickableText; 
+}
+
+
+const beetleContainer = document.querySelector("#beetle-container");
+const beetleImgContainer = document.querySelector("#beetle-img-container");
+const moveText = document.querySelector("#move-beetle-text");
+
+document.addEventListener("DOMContentLoaded", () => {
+    moveText.addEventListener("click", () => {
+        const newBeetle = document.createElement("img");
+        newBeetle.src = "./assets/images/beetle10.png";
+        newBeetle.alt = "A beetle";
+        beetleImgContainer.appendChild(newBeetle);
+
+        newBeetle.classList.add("beetle-img");
+    });
+});

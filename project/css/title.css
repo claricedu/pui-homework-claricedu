@@ -1,9 +1,13 @@
 #title {
-    font-size: 240px;
+    font-size: 200px;
     font-family: 'Jacquard12', sans-serif;
+    margin-top: 30px;
+    margin-bottom: -20px;
 }
 
-#authors {
-    font-size: 20px;
+#credits {
+    display: none;
+    font-size: 24px;
     font-family: 'Fixedsys-Excelsior', sans-serif;
+    padding-left: 5px;
 }
