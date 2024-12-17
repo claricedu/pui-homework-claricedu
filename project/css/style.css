@@ -10,7 +10,7 @@ p {
     color: rgb(38, 38, 38);
 }
 
-#title {
+.title {
     font-size: 200px;
     font-family: 'Jacquard12', sans-serif;
     margin-top: 30px;
@@ -203,4 +203,13 @@ p {
     font-family: 'Jacquard12', sans-serif;
     font-size: 30px;
     pointer-events: none;
+}
+
+
+#ending {
+
+    font-size: 150px;
+    font-family: 'Jacquard12', sans-serif;
+    margin-top: 30px;
+    margin-bottom: -20px;
 }

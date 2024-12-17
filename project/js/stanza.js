@@ -21,6 +21,7 @@ window.addEventListener("mousedown", function (e) {
     music.playbackRate = 0.2;
 });
 
+// code referencing:  https://www.youtube.com/watch?v=ymDjvycjgUM 
 function mouseDown(e) {
     e.preventDefault(); 
     mousedownActive = true;
@@ -199,3 +200,4 @@ document.addEventListener("DOMContentLoaded", () => {
         newBeetle.classList.add("beetle-img");
     });
 });
+

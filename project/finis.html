@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
+<head>
     <title>How Small the Beetles Run</title>
-    <link rel="stylesheet" type="text/css" href="./css/font.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/title.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/font.css"> 
+    <link rel="stylesheet" href="css/style.css"> 
 
-  </head>
-  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/finis.js"></script> 
+</head>
 
-  <body>
+<body>
+    <h3 id="ending">And see how small the beetles run.</h3>
 
-    <main>
-      <h3 id="title">And see how small the beetles run.</h3>
-    </main>
 
-    <video id="background-video-2"  autoplay loop muted playsinline>
+    <!-- Background video -->
+      <video id="background-video-2" autoplay loop muted playsinline>
         <source src="./assets/videos/springs.mp4" type="video/mp4">
         Your browser does not support the video tag.
-      </video>
+    </video>
+
+    <!-- Background music -->
     <audio id="background-music" loop>
-      <source src="./assets/audio/finisLofive.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+        <source src="./assets/audio/finisLofive.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-  </body>
+</body>
 </html>
+

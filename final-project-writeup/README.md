@@ -37,9 +37,9 @@ How a user would interact with your website? For each step, briefly but clearly 
 6. Release "and the berries" for blackberry visuals to appear.
 7. Click on "Dye our feet purple" for the black berries to become smushed.
 8. Release "Pebbles are springs beneath our feet" for a spring video to appear. 
-Release "beetle move" for beetles to appear.
-Click on "move" for beetles to move along the bottom of the page.
-Click on "....." to navigate to ending page. 
+9. Release "beetle move" for beetles to appear.
+10. Click on "move" for beetles to move along the bottom of the page.
+11. Click on "....." to navigate to ending page. 
 
 ## Part 3: External Tool
 
@@ -88,21 +88,20 @@ For the following aspects of your project, edit the corresponding table cell to 
 
 > Impact on your design and plan 
 * It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
+  1. ChatGPT: It was great for debugging. While it was not always helpful, it caught many of the errors that I could have caught myself but would've spent much longer to do so. It was able to spot the most obvious errors such as wrong file names, that often are the most looked over in my debugging.
+  2. ChatGPT: It was also not reliable for interface and algorithm design. I did ask for help but did not find most of the design and implementation suggestions it gave helpful at all. 
 * It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
-* GenAI tool did/did not influence my final design and implementation plan because … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: I was not able to generate decent visual elements that matched what I was going for and gave it as prompts. As a result I had to make a lot of them before working on interactions, as the visuals and interactions felt like they depended on each other.
+  2. ChatGPT: It was also not helpful for slightly more complex implementations, and I ultimately had to dig on Youtube and StackOverflow for interactions such as my drag and release interaction. 
+* GenAI tool did not influence my final design and implementation plan because … For example, 
+  1. ChatGPT: While it helped my implementation, (as discussed above) it was not really reliable for any higher level decision making and I made  all of my high level decisions independently while it helped with the details of my implementation. 
 
 > Use patterns
 * I accepted the generations when …  For example, 
-  1. Tool1: this tool once suggested … and I adjusted my design according to the suggestion because … 
-  2. Tool2: 
+  1. ChatPT: GPT often suggested new classes in CSS that I didn't think about or ask it about, such as overflow handling, that I kept because it made my code more error-proof and was a good addition. 
 * I critiqued/evaluated the generated suggestions by … For example, 
-  1. Tool1: this tool once suggested … but I modified/rejected the suggestion because … 
-  2. Tool2: 
+  1. ChatGPT once suggested to edit my code to be cleaner and in good style by breaking down the code down to be as clean as possible. However, I rejected this suggestion as it made the code less readable and made less sense. I organized it myself according to each case as I had it before. Even though this was more lines of code, it was easier to read and understand.
+  
 
 
 > Pros and cons of using GenAI tools
@@ -118,9 +117,9 @@ For the following aspects of your project, edit the corresponding table cell to 
 Document the usage logs (prompts and chat history links) for the GenAI tools you used. Some tools may not have an easy way to share usage logs, just try your best! Some instructions for different tools:
 
 1. [ChatGPT](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq) / [Gemini](https://support.google.com/gemini/answer/13743730?hl=en&co=GENIE.Platform%3DDesktop): share the anonymous link to all of your chat histories relevant to this project
-2. [GitHub Copilot (VSCode)](https://code.visualstudio.com/docs/copilot/copilot-chat#:~:text=You%20can%20export%20all%20prompts%20and%20responses%20for%20a%20chat%20session%20in%20a%20JSON%20file%20with%20the%20Chat%3A%20Export%20Session...%20command%20(workbench.action.chat.export)%20in%20the%20Command%20Palette.): export chat histories relevant to this project.
 
----
+- https://chatgpt.com/share/6760d04b-7088-8009-94cb-4f43af592276 
+
 
 # **FP3 \- Final Project Check-in**
 
@@ -128,7 +127,7 @@ Document the changes and progress of your project. How have you followed or chan
 
 ## Implementation Plan Updates
 
-- Key update include implementing only 2 stanzas in order to focus on interactions.
+- Key update include implementing only 2 stanzas in order to focus on increasing quality and number of interactions.
 
 ## Generative AI Use Plan Updates
 
