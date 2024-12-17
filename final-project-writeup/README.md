@@ -40,16 +40,20 @@ How a user would interact with your website? For each step, briefly but clearly 
 9. Release "beetle move" for beetles to appear.
 10. Click on "move" for beetles to move along the bottom of the page.
 11. Click on "....." to navigate to ending page. 
+12. Hover on ending texts for text animation.
 
 ## Part 3: External Tool
 
 Describe what important external tool you used (JavaScript library, Web API, animations, or other). Following the bulleted list format below, reply to each of the prompts.
 
-1. Name of tool1  
-   * Why did you choose to use it over other alternatives? (2 sentences max)  
-   * How you used it? (2 sentences max)  
-   * What does it add to your website? (2 sentences max)  
-2. Name of tool2
+1. Animate.css and jQuery
+  * Why did you choose to use it over other alternatives? (2 sentences max)  
+    After researching some text animations, I decided I like the effects of the hinge animation and thus chose these libraries.
+  * How you used it? (2 sentences max)  
+      I used it in the last page of my project to create a text animation. 
+
+  * What does it add to your website? (2 sentences max) 
+    It adds interest and dramatic effect for a finale and makes the project more memorable. 
 
 ## Part 4: Design Iteration
 
