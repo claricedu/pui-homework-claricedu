@@ -124,6 +124,22 @@ Document the usage logs (prompts and chat history links) for the GenAI tools you
 
 - https://chatgpt.com/share/6760d04b-7088-8009-94cb-4f43af592276 
 
+## Appendix
+
+#### title page (index.html):
+
+![WAVE summary page](images/FP4-index-1.png)
+![WAVE details page](images/FP4-index-2.png)
+
+#### game page (stanza.html):
+
+![WAVE summary page](images/FP4-stanza-1.png)
+![WAVE details page](images/FP4-stanza-2.png)
+
+#### end page (finis.html):
+
+![WAVE summary page](images/FP4-finis-1.png)
+![WAVE details page](images/FP4-finis-2.png)
 
 # **FP3 \- Final Project Check-in**
 
