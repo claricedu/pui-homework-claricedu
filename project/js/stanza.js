@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
     moveText.addEventListener("click", (e) => {
         e.preventDefault(); 
         const newBeetle = document.createElement("img");
-        newBeetle.src = "./assets/images/beetle10.png";
-        newBeetle.alt = "A beetle";
+        newBeetle.src = "./assets/images/beetle10.PNG";
+        newBeetle.alt = "A blue beetle";
         beetleImgContainer.appendChild(newBeetle);
 
         newBeetle.classList.add("beetle-img");

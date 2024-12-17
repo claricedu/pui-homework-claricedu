@@ -128,18 +128,23 @@ Document the usage logs (prompts and chat history links) for the GenAI tools you
 
 #### title page (index.html):
 
-![WAVE summary page](images/FP4-index-1.png)
-![WAVE details page](images/FP4-index-2.png)
+![WAVE summary page](assets/writeup-images/FP4-index-1.png)
+![WAVE details page](assets/writeup-images/FP4-index-2.png)
 
 #### game page (stanza.html):
 
-![WAVE summary page](images/FP4-stanza-1.png)
-![WAVE details page](images/FP4-stanza-2.png)
+![WAVE summary page](assets/writeup-images/FP4-stanza-1.png)
+![WAVE details page](assets/writeup-images/FP4-stanza-2.png)
 
 #### end page (finis.html):
 
-![WAVE summary page](images/FP4-finis-1.png)
-![WAVE details page](images/FP4-finis-2.png)
+![WAVE summary page](assets/writeup-images/FP4-finis-1.png)
+![WAVE details page](assets/writeup-images/FP4-finis-2.png)
+
+## Screen sizes
+
+Works for 1400 and 1000 width sizes. 
+
 
 # **FP3 \- Final Project Check-in**
 
@@ -167,15 +172,15 @@ My chosen idea will be a collaboration between me and a friend, Emma Li, where I
 
 ### *Prototype 1*
 
-![first screenshot of prototype 1](images/FP2-prototype1-1.png)
-![second screenshot of prototype 1 with a one more stanza](images/FP2-prototype1-2.png)
+![first screenshot of prototype 1](assets/writeup-images/FP2-prototype1-1.png)
+![second screenshot of prototype 1 with a one more stanza](assets/writeup-images/FP2-prototype1-2.png)
 
 This prototype is a full screen format of the visualization. The phrases stay until two stanzas fill the page, and then disappear and a cleared pageg appears for the new section of the poem. This prototype received the best feedback from the users, who thought it made the narrative more interesting and exciting, as they weren't sure what will pop up next. One criticism was that users are unsure of what to do in the beginning, while most users quickly realized the interactivity, users reproted the constant switching of interactions was distracting and suggested keeping them more limited. 
 
 ### *Prototype 2*
 
-![first screenshot of prototype 1](images/FP2-prototype2-1.png)
-![second screenshot of prototype 2 with 2nd stanza](images/FP2-prototype2-2.png)
+![first screenshot of prototype 1](assets/writeup-images/FP2-prototype2-1.png)
+![second screenshot of prototype 2 with 2nd stanza](assets/writeup-images/FP2-prototype2-2.png)
 
 This prototype is similar to the first, except that there are four sections, each for a stanza of the poem. This way, users begin a new box for each stanza and will have a finished visualization for each stanza to look at by the end of the experience. While I thought users would like the finished product, both users surprisngly found the tighter space feeling more constrained, and that made the popped up graphics and interactions less surprising and delightful. One user that the structure made it feel more constrained and less interesting to her.
 
@@ -194,8 +199,8 @@ In response to this feedback, I implemented several changes. I retained the full
 Show screenshots of your updated design based on the user feedback (\<100 words, \~2 images).
 
 
-![screenshot showing clicking on title brings new stanza](images/FP2-change1.png)
-![screenshot showing clicking anywhere brings new stanza](images/FP2-change2.png)
+![screenshot showing clicking on title brings new stanza](assets/writeup-images/FP2-change1.png)
+![screenshot showing clicking anywhere brings new stanza](assets/writeup-images/FP2-change2.png)
 
 The key implementation of user feedback is that the first interaction now starts with clicking anywhere on the screen rather than clicking on the title, which indicates to users the interactive nature of the experience. While I contemplated adding a label e.g. "click here", it ultimately was too disruptive to the overall narration, and given the webpage is purposed as an art project I beleive its ok that there are more rooms for ambuiguity and exploration, rather than entirely prioritizing user efficiency and ease, as long as its not distressful to the user. Interaction happening from clicking anywhere on the screen was the compromise I settled on that ensures the user understands how to proceed forward fairly quickly without being too "on the nose" and instructive.
 
@@ -266,7 +271,7 @@ I’ll use Generative AI tools responsibly by verifying the accuracy of generate
 
 ### *Interactive/animated poetry visual narrative*
 
-![sketch of idea1's general flow](images/image1.jpg)
+![sketch of idea1's general flow](assets/writeup-images/image1.jpg)
 
 My idea is to create an interactive readthrough/narrative of a chosen poem. The design will feature different visual representations of the poem, as well as the actual poem itself, that are interactive for the reader through actions such as clicking, hovering, dragging, and scrolling. I want this to be more an web-based art project that I can include in my art portfolio, so I want to enhance and convey the chosen narrative through visuals, sound, interactions, and animations.
 
@@ -274,7 +279,7 @@ To ensure accessibility, I'll make sure to provide alt-texts for all visuals so 
 
 ### *Machine knitting designer/visualizer*
 
-![sketch of idea2's user flow](images/image2.jpg)
+![sketch of idea2's user flow](assets/writeup-images/image2.jpg)
 
 
 This idea aims to create an web interface that allows a user to draw out a 2 color design and then convert it to Knitout code, which allows it to be knitted out in a double knit on standard knitting machines. The main component of this will be a user drawing box, where users can draw their own design. The application then convert this into Knitout code, which can be then downloaded and ran by knittting machines.
@@ -286,7 +291,7 @@ To ensure accessibility, I'll make sure the page is navigatable by Tab key. I'll
 ### *Trinket Galore*
 
 
-![Trinket Galore workflow/visual sketches](images/image3.jpg)
+![Trinket Galore workflow/visual sketches](assets/writeup-images/image3.jpg)
 
 My third idea is a web based game inspired by ones such as Rat Shrine [Rat Shrine](https://xrafstar.monster/games/twine/shrine/), where anonymous users can submit their trinkets, knickknacks, and general objects of affection. They'd then be morphed together into a singular collective 3d trinket sculpture/shrine in the palace. Potentially other features will be to trade trinkets with other users, and to spin the 3D model to view and find your own. 
 

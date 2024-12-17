@@ -1,13 +1,9 @@
 @font-face {
     font-family: 'Jacquard12';
-    src: url('/project/assets/fonts/Jacquard12-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../assets/fonts/Jacquard12-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Fixedsys-Excelsior';
-    src: url('/project/assets/fonts/Fixedsys-Excelsior301.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+    src: url('../assets/fonts/Fixedsys-Excelsior301.ttf') format('truetype');
 }
