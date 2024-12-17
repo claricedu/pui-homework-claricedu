@@ -1,8 +1,5 @@
 body {
     font-family: 'Jacquard12', sans-serif;
-    /* font-family: 'Fixedsys-Excelsior', sans-serif; */
-    /* text-align: center;
-    margin-bottom: 200px; */
     margin-left: 40px;
     background-color: #EDEDED;
 }
@@ -11,6 +8,20 @@ body {
 p {
     font-size: 30px;
     color: rgb(38, 38, 38);
+}
+
+#title {
+    font-size: 200px;
+    font-family: 'Jacquard12', sans-serif;
+    margin-top: 30px;
+    margin-bottom: -20px;
+}
+
+#credits {
+    display: none;
+    font-size: 24px;
+    font-family: 'Fixedsys-Excelsior', sans-serif;
+    padding-left: 5px;
 }
 
 #current {
@@ -81,10 +92,9 @@ p {
     border-radius: 50%;   
     object-fit: cover; 
     z-index: 2;  
-
-    position: fixed;           /* Fixes to the viewport */
-    top: 50%;                  /* 50% down from the top of the viewport */
-    left: 50%;                 /* 50% from the left of the viewport */
+    position: fixed;           
+    top: 50%;                  
+    left: 50%;    
     transform: translate(-50%, -50%); /
 }
 
@@ -96,7 +106,7 @@ p {
     height: 100vh;         
     object-fit: cover;    
     z-index: -1;   
-    object-position: top;   /* Aligns the top of the video */
+    object-position: top; 
     opacity: 0.1;  
 }
 
@@ -147,7 +157,6 @@ p {
     object-fit: contain;
 }
 
-
 #beetle-container {
     display: none; 
     position: fixed;
@@ -159,14 +168,14 @@ p {
     align-items: center;
     gap: 20px; 
     padding: 10px;
-    overflow-x: auto; /* Allow scrolling if content exceeds container width */
+    overflow-x: auto; /* scrolling if beetles added exceed container width */
     z-index: 10;    
 }
 
 #beetle-img-container {
     display: flex;
     flex-direction: row;
-    gap: 20px; /* Space between beetles */
+    gap: 20px;
     align-items: center;
 }
 
@@ -180,9 +189,7 @@ p {
 .clickable-text {
     text-decoration: none;
     color: rgb(133, 4, 133);  
-    cursor: pointer;        /* Change cursor to pointer on hover */
-    /* font-size: 24px; */
-    /* transition: color 0.3s;  */
+    cursor: pointer;        
 }
 
 .clickable-text:hover {
@@ -195,5 +202,5 @@ p {
     color: rgb(38, 38, 38);
     font-family: 'Jacquard12', sans-serif;
     font-size: 30px;
-    pointer-events: none; /* Optional: Disable further interaction */
+    pointer-events: none;
 }

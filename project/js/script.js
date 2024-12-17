@@ -1,4 +1,3 @@
-
 const current = document.querySelector("#current");
 
 let newX = 0, newY = 0, startX = 0, startY = 0;
@@ -12,18 +11,18 @@ backgroundVideo.playbackRate = 0.02;
 
 springVideo = document.getElementById('spring-video');
 
-window.addEventListener("mousedown", function () {
+window.addEventListener("mousedown", function (e) {
+    e.preventDefault();
     const music = document.getElementById("background-music");
     music.play().catch((error) => {
         console.error("Audio playback failed:", error);
     });
     music.loop = true;
     music.playbackRate = 0.2;
-
 });
 
 function mouseDown(e) {
-    e.preventDefault();
+    e.preventDefault(); 
     mousedownActive = true;
 
     startX = e.clientX;
@@ -33,8 +32,8 @@ function mouseDown(e) {
 }
 
 function mouseMove(e) { 
-    e.preventDefault();
-    newX = startX- e.clientX;
+    e.preventDefault(); 
+    newX = startX - e.clientX;
     newY = startY - e.clientY;
 
     startX = e.clientX;
@@ -51,7 +50,7 @@ function handlePhrase(phrase) {
 }
 
 function mouseUp(e) {
-    e.preventDefault();
+    e.preventDefault(); 
 
     if (!mousedownActive) return;
 
@@ -98,7 +97,6 @@ function mouseUp(e) {
         default:
             console.log("No matching case for count:", count);
     }
-    
 }
 
 function makeNewPhrase() {
@@ -137,7 +135,8 @@ function makePhraseOne() {
     const clickableText = document.createElement("a");
     clickableText.innerText = "blackberry bushes";
     clickableText.className = 'clickable-text';
-    clickableText.addEventListener('click', function () {
+    clickableText.addEventListener('click', function (e) {
+        e.preventDefault(); 
         const blackberryBush = document.getElementById('blackberry-bush');
 
         // Positioning container above the clickable-text
@@ -153,12 +152,12 @@ function makePhraseOne() {
     return container;
 }
 
-
 function makePhraseFour() {
     const clickableText = document.createElement("a");
     clickableText.innerText = "Dye our feet purple.";
     clickableText.className = 'clickable-text';
-    clickableText.addEventListener('click', function () {
+    clickableText.addEventListener('click', function (e) {
+        e.preventDefault(); 
         const blackberryImages = document.querySelectorAll('#blackberry img');
 
         blackberryImages.forEach(function (img) {
@@ -172,7 +171,6 @@ function makePhraseFour() {
 }
 
 function makePhraseTwelve() {
-
     const clickableText = document.createElement("a");
     clickableText.href = "finis.html";
     clickableText.innerText = "..........";
@@ -186,13 +184,13 @@ function makePhraseTwelve() {
     return clickableText; 
 }
 
-
 const beetleContainer = document.querySelector("#beetle-container");
 const beetleImgContainer = document.querySelector("#beetle-img-container");
 const moveText = document.querySelector("#move-beetle-text");
 
 document.addEventListener("DOMContentLoaded", () => {
-    moveText.addEventListener("click", () => {
+    moveText.addEventListener("click", (e) => {
+        e.preventDefault(); 
         const newBeetle = document.createElement("img");
         newBeetle.src = "./assets/images/beetle10.png";
         newBeetle.alt = "A beetle";

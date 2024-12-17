@@ -13,17 +13,33 @@ Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/
 
 Describe your website (300 words).
 
-* What is the purpose of your website?   
-* Who is the target audience?  
+* What is the purpose of your website?  
+The website is a collaborative project where I visualizaed the poem "How Small the Beetles Run" by Emma Li. Inspired by alternate reality games (ARGs), poem visualizations, and digital installations, it explores how electronic media and creative coding can elevate texts into a fuller sensory experience. I wanted to bridge my visual language with frontend development and this project was an really interesting try at blending interactivity, visuals, and interface design/development.
+
+* Who is the target audience? 
+This project is best aimed at individuals who are interested the intersection of art, technology, and storytelling. I hope everyone can have moments of interest and delight with it, but I think it'll espeically appeal to digital artists, writers, and creative coding developers.
+
 * What information do you convey with your website?   
+The project highlights how technology can turn something as static as a poem into a dynamic, living artwork. By using interactivity, animations, and visuals, the website reflects my visual interpretation of "How Small the Beetles Run". I want to convey a dynamic and engaging experience to viewers and add another dimension to the poem. 
+
 * How is it interesting and engaging? 
+The website is engaging because it rewards curiosity and interaction. As viewers explores the interface, they uncover animations, shifting visuals, and hidden layers that evolve with their actions. It’s an immersive, game-like experience where the poem unfolds gradually, creating moments of surprise and discovery. By combining art and technology, this project transforms poetry into a multisensory experience that feels interactive, exploratory, and alive.
 
 ## Part 2: User Interaction
 
 How a user would interact with your website? For each step, briefly but clearly state the interaction type & how we should reproduce it.
 
-1. Interaction type. Click on X on page Y / scroll on page X, etc.  
-2. 
+1. Click on title page (title.html) for credits
+2. Click again to be taken to the main poem page
+3. Mousedown anywhere begins music
+4. Drag on the word "I" anywhere on the page and release to see the full phrase and unlock 2nd one. 
+5. Click on the purple "blackberry bush" to reveal an image of a bush. 
+6. Release "and the berries" for blackberry visuals to appear.
+7. Click on "Dye our feet purple" for the black berries to become smushed.
+8. Release "Pebbles are springs beneath our feet" for a spring video to appear. 
+Release "beetle move" for beetles to appear.
+Click on "move" for beetles to move along the bottom of the page.
+Click on "....." to navigate to ending page. 
 
 ## Part 3: External Tool
 
@@ -39,9 +55,14 @@ Describe what important external tool you used (JavaScript library, Web API, ani
 
 Describe how you iterated on your prototypes, if at all, including any changes you made to your original design while you were implementing your website and the rationale for the changes. (4-8 sentences max)
 
+1. Originally I wanted a signle page application. However, I ran into a series of implementation difficulties with saving the changes and clearing certain changes. Furthermore, pacing was a consistent issue and I wanted there to be more anticipation to the user interactions. Therefore, 3 diffreent pages wre implemented instad.
+2. On the design side, balancing the pacing of the poem with the interactivity was tricky. I tested the site with users to understand how to keep them engaged with both the visuals and the poem itself. Based on their feedback, I adjusted the music, staggered the appearance of text, reduced background opacity to increase contrast, and scaled down visual elements. These changes helped create a more immersive experience without being too distracting.
+
 ## Part 5: Implementation Challenge
 
 What challenges did you experience in implementing your website? (2-4 sentences max)
+
+Organizing my code and designing algorithms required a lot of trial and error--— deciding where to specify actions and specific use cases, took time to streamline. While there were a lot of ways to implement and make work the action wanted, I had to think a lot about how to make the code be most orgagnized and elegant for me to maintain and others to understand. Additionally, navigating the complexity of interactions was a major challenge, especially since they are often onthe same element, animations would interefere with each other. 
 
 ## Part 6: Generative AI Use and Reflection
 
@@ -59,10 +80,8 @@ For the following aspects of your project, edit the corresponding table cell to 
 
 | Tool Name | Ratings | design | plan | write code | debug | \_ (other?) |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| Tool1 | Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool1 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
-| Tool2| Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool2 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
+| ChatGPT | Usage | No | Yes | Yes | Yes| No |
+| ChatGPT | Productivity | X | 2 | 5 | 7 | X |
 
 
 ### Usage Reflection
@@ -70,7 +89,6 @@ For the following aspects of your project, edit the corresponding table cell to 
 > Impact on your design and plan 
 * It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
   1. Tool1: 
-  2. Tool2:
 * It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
   1. Tool1: 
   2. Tool2:
@@ -89,11 +107,10 @@ For the following aspects of your project, edit the corresponding table cell to 
 
 > Pros and cons of using GenAI tools
 * Pros
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: Efficiency increase. For example, I was able to tell it to add e.preventDefault() everywhere I needed to without combing through over 300 lines of code myself. Use cases as such saves me a lot of time and energy throughout the project.
+  2. ChatGPT: Great learning tool. Instead of searching through multiple YouTube and StackOverflow pages trying to figure out what I need to do, I'd say 75% of the time I'm able to just ask GPT and be able to know what I need to do. Additionally, if I don't understand a part of it, I can directly ask it to explain it to me. 
 * Cons
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: I'm learning less in detail than I used to prior to GenAI. I definitely still need to understand and design myself the bigger picture and architecture of my code, and need know enough to judge whether GPT's output is wrong or right. However, I no longer need to be familiar with the details of exact implementations if I dont want to be. I don't need to memorize what padding vs margin is or write myself a cheat sheet. I don't  consider my learning to be more shallow than before but definitely details are lost as a tradeoff to efficiency.  
 
 
 ### Usage Log
@@ -111,11 +128,11 @@ Document the changes and progress of your project. How have you followed or chan
 
 ## Implementation Plan Updates
 
-- [ ] ...
+- Key update include implementing only 2 stanzas in order to focus on interactions.
 
 ## Generative AI Use Plan Updates
 
-- [ ] ...
+- Nothing has changed.
 
 Remember to keep track of your prompts and usage for [FP4 writeup](#part-6-generative-ai-use-and-reflection).
 
